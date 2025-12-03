@@ -1,0 +1,1 @@
+/home/runner/work/research_portfolio/.codeql-scratch/dbs/cpp/working/autobuild/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/test_order_book.dir/link.d CMakeFiles/test_order_book.dir/tests/test_order_book.cpp.o -o test_order_book  libtrading_engine.a

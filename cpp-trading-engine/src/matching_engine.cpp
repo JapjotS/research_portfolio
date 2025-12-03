@@ -89,10 +89,10 @@ void MatchingEngine::setRiskManager(std::shared_ptr<RiskManager> risk_manager) {
 std::vector<Fill> MatchingEngine::matchOrder(OrderBook& book, Order& order) {
     std::vector<Fill> fills;
     
-    // Market orders: set very aggressive price
+    // Market orders: use maximum/minimum price to match all available liquidity
     Price limit_price = order.price;
     if (order.type == OrderType::Market) {
-        limit_price = (order.side == Side::Buy) ? 1e12 : 0.0;
+        limit_price = (order.side == Side::Buy) ? MAX_PRICE : MIN_PRICE;
     }
     
     // Try to match against resting orders

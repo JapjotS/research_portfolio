@@ -153,6 +153,9 @@ private:
     
     // Helper to clean up empty price levels
     void cleanupLevel(Side side, Price price);
+    
+    // Helper to validate order parameters
+    bool isValidOrder(const Order& order) const;
 };
 
 } // namespace trading

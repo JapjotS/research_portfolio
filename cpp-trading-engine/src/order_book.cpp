@@ -5,8 +5,17 @@ namespace trading {
 
 OrderBook::OrderBook(const Symbol& symbol) : symbol_(symbol) {}
 
+/**
+ * @brief Validate order parameters
+ * @param order The order to validate
+ * @return true if order is valid
+ */
+bool OrderBook::isValidOrder(const Order& order) const {
+    return order.remaining_qty() > 0 && order.price >= 0;
+}
+
 bool OrderBook::addOrder(Order order) {
-    if (order.remaining_qty() <= 0 || order.price < 0) {
+    if (!isValidOrder(order)) {
         return false;
     }
     

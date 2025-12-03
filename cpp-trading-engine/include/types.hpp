@@ -69,6 +69,10 @@ inline const char* to_string(OrderStatus status) {
     }
 }
 
+// Price constants
+constexpr Price MAX_PRICE = 1e12;
+constexpr Price MIN_PRICE = 0.0;
+
 } // namespace trading
 
 #endif // TRADING_TYPES_HPP
